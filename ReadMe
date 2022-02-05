@@ -1,0 +1,9 @@
+Docker Command
+
+docker-composer up --build -d
+docker-compose down
+
+Install larval
+
+docker-compose exec php-apache /bin/bash
+composer create-project laravel/laravel .

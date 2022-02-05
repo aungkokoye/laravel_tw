@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  database:
+    image: mysql:8.0
+    container_name: database
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3455:3306"
+    volumes:
+      - laravel-db:/var/lib/mysql
+
+  php-apache:
+    container_name: php-apache
+    build:
+      context: ./php
+    ports:
+      - '8777:80'
+    volumes:
+      - ./src:/var/www/laravel_docker
+      - ./apache/default.conf:/etc/apache2/sites-enabled/000-default.conf
+    depends_on:
+      - database
+
+volumes:
+  laravel-db:
