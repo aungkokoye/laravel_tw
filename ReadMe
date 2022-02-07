@@ -9,7 +9,7 @@ git pull
 
 Docker Command
 
-docker-composer up --build -d
+docker-compose up --build -d
 docker-compose down
 
 Install larval
