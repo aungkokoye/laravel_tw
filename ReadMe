@@ -1,3 +1,12 @@
+Git Add Remote Repo
+
+mkdir <dir_name>
+cd <dir_name>
+git init
+git remote add origin <ssh_url_from_git_hub>
+git pull
+
+
 Docker Command
 
 docker-composer up --build -d
