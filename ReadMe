@@ -18,7 +18,7 @@ $   docker-compose down
 
 Install larval
 
-mkdir src (host machine)
+make sure src exist in host machine
 
 $   docker-compose exec php-apache /bin/bash
 $   composer create-project laravel/laravel=8.* .
@@ -31,7 +31,7 @@ Follow this url: https://tailwindcss.com/docs/guides/laravel
 
 Inside Docker working Dir (/var/www/laravel_docker)
 
-$   npm install (don't need to run npm install, if docker already installed)
+$   npm install
 
 $   npm install -D tailwindcss postcss autoprefixer
 $   npx tailwindcss init
@@ -65,14 +65,15 @@ Add the @tailwind directives for each of Tailwind’s layers to your ./resources
 
 Run your build process with npm run watch.
 
-$npm run watch
+(if mix: is missing, run again: npm install)
+$   npm run watch
 
 Need to add css link to HTML Header block
 example:
 
     <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      --------------
+      --------------
       <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
 
